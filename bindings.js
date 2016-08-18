@@ -52,7 +52,7 @@ function bindings (opts) {
 
   // Get the module root
   if (!opts.module_root) {
-    opts.module_root = exports.getRoot(exports.getFileName())
+    opts.module_root = fs.realpathSync(exports.getRoot(exports.getFileName()))
   }
 
   // Ensure the given bindings name ends with .node
